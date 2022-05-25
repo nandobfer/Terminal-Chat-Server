@@ -8,5 +8,21 @@ def database():
     return getDatabase()
 
 
+@app.route('/signup', methods=['POST'])
+def signup_route():
+    if request.method == 'POST':
+        if 'signup' in request.form:
+            user = request.form['user']
+            password = request.form['password']
+            try:
+                signUp(user, password)
+                text = 'user successfully signed up'
+            except Exception as error:
+                text = 'error when signing user:'
+                text += error
+
+        return text
+
+
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port="80")
