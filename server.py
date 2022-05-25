@@ -13,9 +13,9 @@ def signup_route():
     if request.method == 'POST':
         if 'signup' in request.form:
             user = request.form['user']
-            password = request.form['password']
+            # password = request.form['password']
             try:
-                signUp(user, password)
+                signUp(user)
                 text = 'user successfully signed up'
             except Exception as error:
                 text = 'error when signing user:'

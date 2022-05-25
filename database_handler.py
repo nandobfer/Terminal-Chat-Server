@@ -7,9 +7,9 @@ def getDatabase():
     return data
 
 
-def signUp(user, password):
+def signUp(user):
     data = getDatabase()
-    data.update({user: password})
+    data.update(user)
 
     with open('database.json', "w") as file:
         file.write(data)
