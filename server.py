@@ -10,6 +10,7 @@ def database():
 
 @app.route('/signup/', methods=['POST'])
 def signup_route():
+    text = ''
     if request.method == 'POST':
         if 'signup' in request.form:
             user = request.form['user']
