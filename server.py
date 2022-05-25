@@ -13,7 +13,7 @@ def signup_route():
     text = ''
     if request.method == 'POST':
         if 'signup' in request.form:
-            user = request.form['user']
+            user = request.form.get('user')
             # password = request.form['password']
             try:
                 print(user)
