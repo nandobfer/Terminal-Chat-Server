@@ -8,7 +8,7 @@ def database():
     return getDatabase()
 
 
-@app.route('/signup', methods=['POST'])
+@app.route('/signup/', methods=['POST'])
 def signup_route():
     if request.method == 'POST':
         if 'signup' in request.form:
