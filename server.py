@@ -31,6 +31,13 @@ def diconnect():
         return 'disconnected'
 
 
+@app.route('/reset/', methods=['GET'])
+def reset():
+    global users
+    users = []
+    return 'users reseted'
+
+
 @app.route('/signup/', methods=['POST'])
 def signup_route():
     text = ''
