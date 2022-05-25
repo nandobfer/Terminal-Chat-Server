@@ -22,6 +22,15 @@ def connect():
     return str(users)
 
 
+@app.route('/disconnect/', methods=['POST'])
+def diconnect():
+    global users
+    user = request.form['user']
+    if user in users:
+        users.remove(user)
+        return 'disconnected'
+
+
 @app.route('/signup/', methods=['POST'])
 def signup_route():
     text = ''
