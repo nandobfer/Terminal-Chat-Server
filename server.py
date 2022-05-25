@@ -2,10 +2,21 @@ from flask import Flask, request, url_for, redirect, render_template, request
 from database_handler import *
 app = Flask(__name__)
 
+users = []
+
 
 @app.route('/database.json', methods=['GET'])
 def database():
     return getDatabase()
+
+
+@app.route('/connect/', methods=['POST'])
+def connect():
+    global users
+    user = request.form['user']
+    users.append(user)
+
+    return str(users)
 
 
 @app.route('/signup/', methods=['POST'])
