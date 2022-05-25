@@ -16,6 +16,7 @@ def signup_route():
             user = request.form['user']
             # password = request.form['password']
             try:
+                print(user)
                 signUp(user)
                 text = 'user successfully signed up'
             except Exception as error:
