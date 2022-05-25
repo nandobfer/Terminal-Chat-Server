@@ -14,7 +14,10 @@ def database():
 def connect():
     global users
     user = request.form['user']
-    users.append(user)
+    if not user in users:
+        users.append(user)
+    else:
+        return 'user already connected'
 
     return str(users)
 
