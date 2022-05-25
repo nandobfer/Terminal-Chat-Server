@@ -17,7 +17,7 @@ def connect():
     if not user in users:
         users.append(user)
     else:
-        return 'user already connected'
+        return 'user already connected, try again'
 
     return str(users)
 
