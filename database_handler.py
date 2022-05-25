@@ -8,6 +8,7 @@ def getDatabase():
 
 
 def signUp(user):
+    user = json.loads(user)
     data = getDatabase()
     data.update(user)
 
