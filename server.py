@@ -28,7 +28,8 @@ def disconnect():
     user = request.form['user']
     if user in users:
         users.remove(user)
-        return 'disconnected'
+
+    return 'disconnected'
 
 
 @app.route('/reset/', methods=['GET'])
@@ -42,24 +43,6 @@ def reset():
 def users_url():
     global users
     return str(users)
-
-
-@app.route('/signup/', methods=['POST'])
-def signup_route():
-    text = ''
-    if request.method == 'POST':
-        if 'signup' in request.form:
-            user = request.form['signup']
-            # password = request.form['password']
-            try:
-                print(user)
-                signUp(user)
-                text = 'user successfully signed up'
-            except Exception as error:
-                text = 'error when signing user:'
-                text += error
-
-        return text
 
 
 if __name__ == '__main__':
