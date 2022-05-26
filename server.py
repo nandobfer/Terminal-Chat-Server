@@ -38,6 +38,12 @@ def reset():
     return 'users reseted'
 
 
+@app.route('/users/', methods=['GET'])
+def reset():
+    global users
+    return str(users)
+
+
 @app.route('/signup/', methods=['POST'])
 def signup_route():
     text = ''
