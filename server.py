@@ -23,7 +23,7 @@ def connect():
 
 
 @app.route('/disconnect/', methods=['POST'])
-def diconnect():
+def disconnect():
     global users
     user = request.form['user']
     if user in users:
