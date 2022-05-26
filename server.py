@@ -39,7 +39,7 @@ def reset():
 
 
 @app.route('/users/', methods=['GET'])
-def reset():
+def users_url():
     global users
     return str(users)
 
