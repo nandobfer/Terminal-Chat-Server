@@ -5,9 +5,9 @@ app = Flask(__name__)
 users = []
 
 
-@app.route('/database.json', methods=['GET'])
-def database():
-    return getDatabase()
+# @app.route('/database.json', methods=['GET'])
+# def database():
+#     return getDatabase()
 
 
 @app.route('/connect/', methods=['POST'])
@@ -17,10 +17,18 @@ def connect():
     if not user in users:
         users.append(user)
     else:
-        return 'user already connected, try again'
+        return 'user already connected'
 
     return str(users)
 
+@app.route('/force_connect/', methods=['POST'])
+def connect():
+    global users
+    user = request.form['user']
+    if not user in users:
+        users.append(user)
+
+    return str(users)
 
 @app.route('/disconnect/', methods=['POST'])
 def disconnect():
