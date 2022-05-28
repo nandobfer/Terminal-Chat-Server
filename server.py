@@ -21,14 +21,16 @@ def connect():
 
     return str(users)
 
+
 @app.route('/force_connect/', methods=['POST'])
-def connect():
+def force_connect():
     global users
     user = request.form['user']
     if not user in users:
         users.append(user)
 
     return str(users)
+
 
 @app.route('/disconnect/', methods=['POST'])
 def disconnect():
